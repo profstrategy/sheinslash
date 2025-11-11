@@ -118,7 +118,7 @@ const CategoriesSection = () => {
 
         {/* Category Cards Container */}
         <motion.div
-          className="flex overflow-x-auto whitespace-nowrap gap-2 pb-4 md:grid md:grid-cols-4 lg:grid-cols-6 md:gap-4 no-scrollbar"
+          className="flex overflow-x-auto whitespace-nowrap gap-2 pb-4 md:grid md:grid-cols-4 md:gap-4 no-scrollbar"
           ref={scrollRef}
           onMouseEnter={() => isMobile && setIsPaused(true)}
           onMouseLeave={() => isMobile && setIsPaused(false)}
