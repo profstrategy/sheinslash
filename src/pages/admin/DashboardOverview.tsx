@@ -1,6 +1,4 @@
 "use client";
-
-import React from "react";
 import { motion, Easing } from "framer-motion";
 import AdminStatCard from "@/components/admin/AdminStatCard.tsx";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";

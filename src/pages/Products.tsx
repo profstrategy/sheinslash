@@ -1,11 +1,10 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, Shirt, Baby, Gem, ShoppingBag, SlidersHorizontal } from "lucide-react";
-import ProductCard, { Product } from "@/components/products/ProductCard.tsx";
+import ProductCard from "@/components/products/ProductCard.tsx";
 import { motion, AnimatePresence, Easing } from "framer-motion";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { mockProducts, ProductDetails, getProductsByIds } from "@/data/products.ts";

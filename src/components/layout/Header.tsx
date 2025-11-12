@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -36,7 +36,7 @@ const Header = ({ isCartDrawerOpen, setIsCartDrawerOpen }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
   const navigate = useNavigate();
-  const isMobile = useIsMobile(); // This now returns true for mobile and tablet
+  const isMobile = useIsMobile(); // This returns true for mobile and tablet
   const { totalItems } = useCart();
   const { totalFavorites } = useFavorites();
 

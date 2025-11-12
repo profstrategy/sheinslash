@@ -197,7 +197,7 @@ const OrdersManagement = () => {
         </motion.p>
       </div>
 
-      <Card className="rounded-xl shadow-sm">
+      <Card className="rounded-xl shadow-sm lg:max-w-7xl md:max-w-[28rem] m-auto max-w-[40rem]">
         <CardHeader>
           <CardTitle className="text-xl font-bold flex items-center gap-2">
             <ShoppingBag className="h-5 w-5 text-primary" /> All Orders

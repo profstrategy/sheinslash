@@ -100,7 +100,7 @@ const App = () => {
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </Suspense>
-                <FloatingWhatsApp /> {/* Add the FloatingWhatsApp component here */}
+                <FloatingWhatsApp />
                 <Footer />
             </FavoritesProvider>
           </CartProvider>
