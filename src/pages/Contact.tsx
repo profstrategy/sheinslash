@@ -1,6 +1,4 @@
 "use client";
-
-import React from "react";
 import ContactHero from "@/components/contact-page/ContactHero.tsx";
 import ContactInfoCards from "@/components/contact-page/ContactInfoCards.tsx";
 import ContactFormMap from "@/components/contact-page/ContactFormMap.tsx";

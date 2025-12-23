@@ -1,6 +1,4 @@
 "use client";
-
-import React from "react";
 import { motion, Easing } from "framer-motion";
 import {
   Accordion,
@@ -15,42 +13,47 @@ interface FaqItem {
 }
 
 const faqItems: FaqItem[] = [
-  {
+ {
     question: "What payment methods do you accept?",
     answer:
-      "We accept all major debit/credit cards (Visa, MasterCard), bank transfers, and mobile money options. We aim to provide convenient payment solutions for our Nigerian customers.",
+      "We accept Mobile Money payments (MTN and Airtel) as well as cash on delivery. Our goal is to make ordering convenient and accessible for all customers in Uganda.",
   },
   {
-    question: "How long does shipping take within Nigeria?",
+    question: "How long does delivery take?",
     answer:
-      "Standard shipping within Nigeria typically takes 3-7 business days, depending on your location. Expedited shipping options may be available for faster delivery in select cities.",
+      "Delivery usually takes between 2–4 hours after order confirmation, depending on your location and order volume. We always strive for fast and reliable service.",
   },
   {
-    question: "What is your return policy for fashion items?",
+    question: "Which areas do you deliver to?",
     answer:
-      "We offer a 7-day hassle-free return policy for most fashion items, provided they are in their original condition with tags attached. For thrift items, returns are accepted only if the item is significantly not as described. Please refer to our full Returns & Exchanges policy for more details.",
+      "We currently deliver within Kampala and surrounding areas. Delivery fees may vary based on distance. Expansion to more regions is ongoing.",
   },
   {
-    question: "Do you offer international shipping?",
+    question: "Is your rabbit meat fresh and hygienically processed?",
     answer:
-      "Currently, we focus on serving our Nigerian customers with nationwide delivery. We are exploring international shipping options for the future.",
+      "Yes. All our rabbit meat is sourced from trusted farmers and processed under strict hygiene standards. Fresh meat is cleanly cut, portioned, and properly packaged to maintain quality.",
   },
   {
-    question: "How can I track my order?",
+    question: "Do you sell cooked rabbit meat?",
     answer:
-      "Once your order is shipped, you will receive a confirmation email with a tracking number. You can use this number on our website's 'Track Order' page or directly on the courier's website.",
+      "Yes. We offer delicious fried rabbit portions that are fully cooked, well-seasoned, and ready to eat. These are perfect for quick meals or special occasions.",
   },
   {
-    question: "Are your thrift items truly high-quality?",
+    question: "Can I place bulk or event orders?",
     answer:
-      "Yes! We pride ourselves on curating only premium luxury thrift items. Each piece undergoes a rigorous inspection process to ensure it meets our high standards for quality, condition, and style.",
+      "Absolutely. We offer family packs and custom bulk orders for events, offices, and parties. Please contact us ahead of time to help us prepare your order properly.",
   },
   {
-    question: "How do your fashion bundles work?",
+    question: "How do I track my order?",
     answer:
-      "Our fashion bundles are carefully curated collections of complementary items (e.g., a top, a bottom, and an accessory) designed to create a complete, stylish outfit at an unbeatable price. They are perfect for refreshing your wardrobe effortlessly.",
+      "Once your order is confirmed, you will receive updates via phone or WhatsApp. You can also contact our support line for real-time delivery updates.",
   },
-];
+  {
+    question: "What makes rabbit meat a healthy choice?",
+    answer:
+      "Rabbit meat is low in fat and cholesterol, high in protein, and easy to digest. It is an excellent choice for people focused on healthy eating and balanced nutrition.",
+  },
+]
 
 const staggerContainer = {
   hidden: { opacity: 0 },

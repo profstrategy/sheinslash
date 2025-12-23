@@ -1,6 +1,4 @@
 "use client";
-
-import React from "react";
 import { motion, Easing } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 
@@ -26,7 +24,7 @@ const FaqHero = () => {
             Frequently Asked Fashion Questions
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Find quick answers to the most common questions about our unique collections, services, and policies.
+            Find quick answers to the most common questions about TaltexMeatHub collections, services, and policies.
           </p>
         </div>
       </motion.div>

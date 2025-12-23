@@ -1,6 +1,4 @@
 "use client";
-
-import React from "react";
 import { motion, Easing } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -20,10 +18,10 @@ const PrivacyCTA = () => {
       viewport={{ once: true, amount: 0.3 }}
     >
       <h2 className="text-xl md:text-2xl font-bold mb-4 text-foreground">
-        Questions About Your Fashion Privacy?
+        Questions About Your Privacy?
       </h2>
       <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto mb-6">
-        If you have any concerns or require further clarification on our privacy practices regarding your unique wears, please don't hesitate to reach out.
+        If you have any concerns or require further clarification on our privacy practices, please don't hesitate to reach out.
       </p>
       <Button asChild size="lg">
         <Link to="/contact">Contact Us</Link>

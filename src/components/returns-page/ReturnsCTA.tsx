@@ -1,6 +1,4 @@
 "use client";
-
-import React from "react";
 import { motion, Easing } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -20,10 +18,10 @@ const ReturnsCTA = () => {
       viewport={{ once: true, amount: 0.3 }}
     >
       <h2 className="text-xl md:text-2xl font-bold mb-4 text-foreground">
-        Need Further Assistance with Your Fashion Returns?
+        Need Further Assistance with Your Returns?
       </h2>
       <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto mb-6">
-        Our customer support team is here to guide you through the return process for your unique wears.
+        Our customer support team is here to guide you through the return process for your orders.
       </p>
       <Button asChild size="lg">
         <Link to="/contact">Contact Us</Link>

@@ -14,7 +14,7 @@ import {
   Loader2,
   CheckCircle2,
 } from "lucide-react";
-import { FaTiktok, FaTelegram, FaWhatsapp } from "react-icons/fa"; // Import FaWhatsapp
+import { FaTiktok, FaTelegram, FaWhatsapp, FaTwitter } from "react-icons/fa"; // Import FaWhatsapp
 import UniqueEmporiumLogo from "@/components/logo/UniqueEmporiumLogo.tsx";
 
 const staggerContainer = {
@@ -72,13 +72,13 @@ const Footer = () => {
             </p>
             <div className="space-y-2 text-sm text-primary-foreground/80">
               <p className="flex items-center">
-                <Mail className="mr-2 h-4 w-4" /> support@uniqueemporium.com
+                <Mail className="mr-2 h-4 w-4" /> support@taltexmeathub.com 
               </p>
               <p className="flex items-center">
-                <Phone className="mr-2 h-4 w-4" /> +234 (906) 554-5572
+                <Phone className="mr-2 h-4 w-4" /> +256-769-623-715
               </p>
               <p className="flex items-center">
-                <MapPin className="mr-2 h-11 w-11" /> No 4 crescent Street opposite Ace supermarket unity, Ilorin, Kwara State, Nigeria
+                <MapPin className="mr-2 h-11 w-11" /> Busega
               </p>
             </div>
           </motion.div>
@@ -111,14 +111,14 @@ const Footer = () => {
                   Returns & Exchanges
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/warranty"
                   className="hover:text-primary-foreground/60 transition-colors"
                 >
                   Warranty Information
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   to="/privacy"
@@ -127,14 +127,14 @@ const Footer = () => {
                   Privacy Policy
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/terms"
                   className="hover:text-primary-foreground/60 transition-colors"
                 >
                   Terms of Service
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </motion.div>
 
@@ -175,7 +175,7 @@ const Footer = () => {
             </AnimatePresence>
             <div className="flex space-x-4">
               <motion.a
-                href="https://whatsapp.com/channel/0029VbBJEWBL7UVVHCMcjT0a"
+                href="https://wa.me/+256708875738"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
@@ -184,18 +184,9 @@ const Footer = () => {
               >
                 <FaWhatsapp className="h-6 w-6" />
               </motion.a>
+              
               <motion.a
-                href="https://www.facebook.com/profile.php?id=100083121582522&mibextid=ZbWKwL"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Facebook className="h-6 w-6" />
-              </motion.a>
-              <motion.a
-                href="https://www.tiktok.com/@uniquethriftwears001"
+                href="https://www.tiktok.com/@TaltexMeathub "
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
@@ -205,7 +196,7 @@ const Footer = () => {
                 <FaTiktok className="h-6 w-6" />
               </motion.a>
               <motion.a
-                href="https://www.instagram.com/unique_emporium1/"
+                href="https://www.instagram.com/TaltexMeathub/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
@@ -215,14 +206,24 @@ const Footer = () => {
                 <Instagram className="h-6 w-6" />
               </motion.a>
               <motion.a
-                href="https://t.me/+hmN1ID2WHJdjZGRk"
+                href="https://facebook.com/TaltexMeathub"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <FaTelegram className="h-6 w-6" />
+                <Facebook className="h-6 w-6" />
+              </motion.a>
+              <motion.a
+                href="https://x.com/TaltexMeathub "
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <FaTwitter className="h-6 w-6" />
               </motion.a>
             </div>
           </motion.div>
@@ -230,15 +231,15 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-2 border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground/60 md:flex-row">
-          <p>&copy; 2019-2025 Unique Emporium. All rights reserved.</p>
+          <p>&copy;  {`${new Date().getFullYear()} All rights reserved.`}</p>
           <p>
             <a
-              href="https://www.web-aura.com/"
+              href="https://www.linkedin.com/in/ismail-abdulrahman/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary-foreground transition-colors"
             >
-              Built with ❤️ by Web-Aura
+              Built with ❤️ by Abdulrahman
             </a>
           </p>
         </div>

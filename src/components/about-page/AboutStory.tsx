@@ -1,6 +1,4 @@
 "use client";
-
-import React from "react";
 import { motion, Easing } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import ImageWithFallback from "@/components/common/ImageWithFallback.tsx"; // Import ImageWithFallback
@@ -19,19 +17,31 @@ const AboutStory = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="text-center md:text-left"
+          className="text-center md:text-left flex flex-col gap-8"
         >
-          <Badge variant="outline" className="mb-4 text-sm">Our Mission</Badge>
-          <h2 className="font-poppins text-3xl md:text-4xl font-bold mb-6 text-foreground">
-            Empowering Resellers Across Nigeria
+           <h2 className="font-poppins text-3xl md:text-4xl font-bold mb-6 text-foreground">
+            Reasons Behind Our Existence
           </h2>
-          <div className="space-y-4 text-base text-muted-foreground">
-            <p>
-              At Unique Emporium, we help resellers and boutique owners access high-quality fashion in bulk. From SHEIN gowns to vintage shirts, kidswear, and more, every collection is carefully curated for profit and prestige.
-            </p>
-            <p>
-              Our mission is to be Nigeria's most trusted wholesale fashion hub, providing a seamless and profitable sourcing experience for fashion entrepreneurs. We are committed to offering diverse, trendy, and high-quality inventory that helps your business thrive.
-            </p>
+          <div>
+            <Badge variant="outline" className="mb-4 text-sm">Our Mission</Badge>
+            <div className="space-y-4 text-base text-muted-foreground">
+              <p>
+                To make premium, healthy, and affordable rabbit meat accessible to Ugandans through fast and
+                reliable delivery.
+              </p>
+            </div>
+          </div>
+          <div>
+            <Badge variant="outline" className="mb-4 text-sm">Our Vision </Badge>
+            {/* <h2 className="font-poppins text-3xl md:text-4xl font-bold mb-6 text-foreground">
+            Empowering Resellers Across Nigeria
+          </h2> */}
+            <div className="space-y-4 text-base text-muted-foreground">
+              <p>
+                To become Uganda’s leading health-focused eatery, recognized for exceptional rabbit meat
+                products.
+              </p>
+            </div>
           </div>
         </motion.div>
         <motion.div

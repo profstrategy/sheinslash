@@ -1,6 +1,4 @@
 "use client";
-
-import React from "react";
 import { motion, Easing } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 
@@ -26,7 +24,7 @@ const ReturnsHero = () => {
             Hassle-Free Returns & Refunds
           </h1>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
-            Understand our straightforward process for returns, exchanges, and refunds to ensure your peace of mind with every unique wear.
+            Understand our straightforward process for returns, exchanges, and refunds to ensure your peace of mind with us.
           </p>
         </div>
       </motion.div>

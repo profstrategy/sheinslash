@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { MapPin, CheckCircle2, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { Link } from "react-router-dom";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -162,9 +163,12 @@ const ContactFormMap = () => {
         <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
           <Card className="h-full rounded-2xl flex flex-col">
             <CardHeader>
-              <CardTitle className="text-lg md:text-2xl font-bold text-foreground">Visit Our Showroom</CardTitle>
+              <CardTitle className="text-lg md:text-2xl font-bold text-foreground">
+                Our Kitchen & Delivery Hub
+              </CardTitle>
+
               <p className="text-xs md:text-sm text-muted-foreground mt-2">
-                Experience our unique collections firsthand at our state-of-the-art showroom.
+                All orders are prepared fresh from our hygienic kitchen and delivered directly to your doorstep.
               </p>
             </CardHeader>
             <CardContent className="flex-grow flex flex-col">
@@ -172,36 +176,48 @@ const ContactFormMap = () => {
                 <img src="/public/placeholder.svg" alt="Map Placeholder" className="w-full h-full object-cover opacity-50" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-muted-foreground">
                   <MapPin className="h-10 w-10 md:h-12 md:w-12 text-primary mx-auto mb-3 md:mb-4" />
-                  <p className="text-lg font-semibold">Map Coming Soon!</p>
-                  <p className="text-sm">Interactive map integration will be available here.</p>
+                  <p className="text-lg font-semibold">Delivery Coverage Map</p>
+                  <p className="text-sm">
+                    Our delivery zones will be displayed here soon.
+                  </p>
                 </div>
               </div>
 
-              <div className="mb-6 text-center">
-                <p className="text-sm text-muted-foreground">
-                  Find us at: <span className="font-semibold text-foreground">No 4 crescent Street opposite Ace supermarket unity, Ilorin, Kwara State, Nigeria</span>
-                </p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  (Appointments recommended for personalized styling sessions)
-                </p>
-              </div>
+              <p className="text-sm text-muted-foreground">
+                Based in:{" "}
+                <span className="font-semibold text-foreground">
+                  Busega, Kampala, Uganda
+                </span>
+              </p>
+              <p className="text-xs text-muted-foreground mt-1">
+                (We currently operate as a delivery-first service)
+              </p>
+
 
               <div className="mt-auto">
-                <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4 text-foreground">Showroom Features:</h3>
+                <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4 text-foreground">
+                  What We Offer:
+                </h3>
+
                 <ul className="space-y-3 text-xs md:text-sm text-muted-foreground">
                   <li className="flex items-center">
-                    <CheckCircle2 className="h-4 w-4 mr-2 text-green-500" /> Live styling consultations
+                    <CheckCircle2 className="h-4 w-4 mr-2 text-green-500" />
+                    Fresh & fried rabbit meat prepared daily
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle2 className="h-4 w-4 mr-2 text-green-500" /> Exclusive bundle previews
+                    <CheckCircle2 className="h-4 w-4 mr-2 text-green-500" />
+                    Hygienic processing and food-grade packaging
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle2 className="h-4 w-4 mr-2 text-green-500" /> Personalized shopping experience
+                    <CheckCircle2 className="h-4 w-4 mr-2 text-green-500" />
+                    Fast home, office, and event delivery
                   </li>
                 </ul>
-                <Button className="w-full mt-8" variant="outline">
-                  Get Directions
+
+                <Link to={"https://wa.me/+256708875738"}><Button className="w-full mt-8" variant="outline">
+                  Order via WhatsApp
                 </Button>
+                </Link>
               </div>
             </CardContent>
           </Card>
