@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom";
 import { Sheet, SheetContent, SheetHeader } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Heart, Shirt, Baby, Gem, ShoppingBag, Info, Mail, List, User, Home } from "lucide-react";
+import { Heart, Gem, ShoppingBag, Info, Mail, List, Home, Drumstick, Package, Flame, Users } from "lucide-react";
 import Badge from "@/components/common/Badge.tsx";
 import { motion, Easing } from "framer-motion";
 import { useCart } from "@/context/CartContext.tsx";
@@ -14,7 +14,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { accountNavItems } from "@/data/accountNavItems.ts";
+// import { accountNavItems } from "@/data/accountNavItems.ts";
 // import { toast } from "sonner"; 
 
 interface MobileMenuProps {
@@ -25,13 +25,10 @@ interface MobileMenuProps {
 }
 
 const categories = [
-  { name: "Kids", icon: Baby, link: "/products?category=Kids" },
-  { name: "Kids Patpat", icon: Baby, link: "/products?category=Kids Patpat" },
-  { name: "Children Jeans", icon: Baby, link: "/products?category=Children Jeans" },
-  { name: "Children Shirts", icon: Baby, link: "/products?category=Children Shirts" },
-  { name: "Men Vintage Shirts", icon: Shirt, link: "/products?category=Men Vintage Shirts" },
-  { name: "Amazon Ladies", icon: ShoppingBag, link: "/products?category=Amazon Ladies" },
-  { name: "SHEIN Gowns", icon: Shirt, link: "/products?category=SHEIN Gowns" },
+  { name: "Fresh Whole Rabbit", icon: Drumstick, link: "/products?category=Fresh Rabbit Meat" },
+  { name: "Fresh Rabbit Cuts Pack", icon: Package, link: "/products?category=Rabbit Cuts" },
+  { name: "Fried Rabbit Portion", icon: Flame, link: "/products?category=Fried Rabbit" },
+  { name: "Family Packs", icon: Users, link: "/products?category=Family Packs" },
   { name: "Others", icon: Gem, link: "/products?category=Others" },
 ];
 
