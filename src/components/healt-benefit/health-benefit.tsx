@@ -2,10 +2,9 @@
 
 import React from "react";
 import { motion, Easing } from "framer-motion";
-import { ShieldCheck, Truck, Headset, DollarSign, RefreshCw, Award, Gem, Sparkles, HeartHandshake, Tag, XCircle } from "lucide-react"; // Updated icons
-import { cn } from "@/lib/utils";
+import { Sparkles, Heart, Leaf, ShieldCheck, Activity, Apple } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import ImageWithFallback from "@/components/common/ImageWithFallback.tsx"; // Import ImageWithFallback
+import ImageWithFallback from "@/components/common/ImageWithFallback.tsx";
 
 interface Reason {
   icon: React.ElementType;
@@ -15,36 +14,38 @@ interface Reason {
 
 const reasons: Reason[] = [
   {
-    icon: Gem,
-    title: "Curated Premium Bundles",
-    description: "Hand-picked luxury thrift and fashion bundles at unbeatable prices.",
+    icon: Heart,
+    title: "High in Protein",
+    description: "Rabbit meat is a rich source of lean protein, supporting muscle growth and overall body strength.",
   },
   {
     icon: Sparkles,
-    title: "Luxury Feel, Everyday Comfort",
-    description: "Experience high-end fashion designed for your daily comfort.",
+    title: "Low Fat & Cholesterol",
+    description: "Naturally low in fat and cholesterol, making it a heart-friendly choice for healthy living.",
   },
   {
-    icon: Truck,
-    title: "Flexible Delivery Options",
-    description: "Pick-up, Dispatch Rider, or Park Delivery available nationwide.",
+    icon: Leaf,
+    title: "Easily Digestible",
+    description: "Gentle on the stomach and easy to digest, suitable for all age groups.",
   },
   {
-    icon: XCircle, // Changed icon to XCircle
-    title: "Final Sale Policy", // Changed title
-    description: "All products sold in good condition are final sale. Please confirm details before ordering.", // Changed description
+    icon: ShieldCheck,
+    title: "Supports Heart Health",
+    description: "Helps maintain healthy blood pressure and reduces the risk of cardiovascular issues.",
   },
   {
-    icon: HeartHandshake,
-    title: "Trusted by Fashion Lovers",
-    description: "Join hundreds of satisfied Nigerian customers who love our style.",
+    icon: Activity,
+    title: "Rich in Essential Nutrients",
+    description: "Packed with vitamins and minerals like iron, potassium, and B-vitamins for daily wellness.",
   },
   {
-    icon: Tag,
-    title: "Unbeatable Value",
-    description: "Enjoy premium quality and unique styles without breaking the bank.",
+    icon: Apple,
+    title: "Ideal for Healthy Diets",
+    description: "Perfect for weight management, diabetic-friendly meals, and balanced nutrition plans.",
   },
 ];
+
+
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -75,25 +76,25 @@ const WhyChooseUsSection = () => {
         {/* Header (Title, Description, Badge) */}
         <div className="text-center mb-16">
           <motion.div variants={fadeInUp}>
-            <Badge variant="outline" className="mb-4 text-xs">Your Futuristic Fashion Hub</Badge>
+            <Badge variant="outline" className="mb-4 text-xs">Your Home Of Meat</Badge>
           </motion.div>
           <motion.h2
             className="font-poppins font-bold text-sm md:text-5xl lg:text-2xl text-foreground mb-6"
             variants={fadeInUp}
           >
-            Why Choose Unique Emporium?
+            Health Benefits
           </motion.h2>
-          <motion.p
+          {/* <motion.p
             className="text-xs lg:text-sm text-muted-foreground max-w-3xl mx-auto"
             variants={fadeInUp}
           >
             Experience the difference with our commitment to unique style, quality, and exceptional service.
-          </motion.p>
+          </motion.p> */}
         </div>
 
 
         {/* Banner Image */}
-        <motion.div
+        {/* <motion.div
           className="relative w-full max-w-5xl mx-auto h-48 md:h-64 rounded-xl overflow-hidden shadow-lg mt-12 mb-12 px-4 sm:px-6 lg:px-8"
           variants={fadeInUp}
         >
@@ -102,7 +103,7 @@ const WhyChooseUsSection = () => {
             alt="Unique Emporium Fashion Banner"
             containerClassName="w-full h-full"
           />
-        </motion.div>
+        </motion.div> */}
 
         {/* Main Content Grid (Image + Reasons) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">

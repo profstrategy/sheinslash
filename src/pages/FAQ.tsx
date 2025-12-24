@@ -1,6 +1,4 @@
 "use client";
-
-import React from "react";
 import FaqHero from "@/components/faq-page/FaqHero";
 import FaqContent from "@/components/faq-page/FaqContent";
 

@@ -3,7 +3,7 @@
 import React from "react";
 import { motion, Easing } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import { Truck, Clock, Package, MapPin, ShieldCheck, Globe } from "lucide-react"; // Added Globe for clarity
+import { Truck, Clock, Package, MapPin, ShieldCheck } from "lucide-react";
 
 interface ShippingInfo {
   icon: React.ElementType;
@@ -15,16 +15,16 @@ const shippingInfos: ShippingInfo[] = [
   {
     icon: MapPin,
     title: "1. Pick-up (Free)",
-    description: "Collect directly from our warehouse in Ilorin.", // Corrected from Lagos to Ilorin
+    description: "Collect directly from our restaurant in Busega.",
   },
   {
     icon: Truck,
-    title: "2. Dispatch Rider (@ ₦1)",
+    title: "2. Dispatch Rider",
     description: "Riders handle delivery fees; we negotiate fair prices and inform you before dispatch.",
   },
   {
     icon: Truck,
-    title: "3. Park Delivery (@ ₦1)", // Corrected here
+    title: "3. Park Delivery",
     description: "Drivers handle delivery fees; we negotiate fair prices and inform you before dispatch.",
   },
   {
@@ -35,7 +35,7 @@ const shippingInfos: ShippingInfo[] = [
   {
     icon: ShieldCheck,
     title: "Quality Assurance",
-    description: "All unique wears are carefully checked before dispatch.",
+    description: "All orders are carefully checked before dispatch.",
   },
   {
     icon: Clock,
@@ -101,7 +101,7 @@ const ShippingInfoCards = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        💡 All delivery charges are handled between you and the dispatch/driver — Unique Emporium does not profit from delivery fees.
+        💡 All delivery charges are handled between you and the dispatch/driver — we don't profit from delivery fees.
       </motion.p>
     </section>
   );

@@ -4,8 +4,16 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Search, Shirt, Baby, Gem, ShoppingBag, SlidersHorizontal } from "lucide-react";
-import ProductCard, { Product } from "@/components/products/ProductCard.tsx";
+import {
+  Search,
+  Drumstick,
+  Flame,
+  Package,
+  Users,
+  SlidersHorizontal,
+} from "lucide-react";
+
+import ProductCard from "@/components/products/ProductCard.tsx";
 import { motion, AnimatePresence, Easing } from "framer-motion";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { mockProducts, ProductDetails, getProductsByIds } from "@/data/products.ts";
@@ -16,16 +24,13 @@ import ProductCardSkeleton from "@/components/products/ProductCardSkeleton.tsx";
 const allProducts: ProductDetails[] = mockProducts;
 
 const categories = [
-  { name: "All Categories", value: "all" },
-  { name: "Kids", value: "Kids", icon: Baby },
-  { name: "Kids Patpat", value: "Kids Patpat", icon: Baby },
-  { name: "Children Jeans", value: "Children Jeans", icon: Baby },
-  { name: "Children Shirts", value: "Children Shirts", icon: Baby },
-  { name: "Men Vintage Shirts", value: "Men Vintage Shirts", icon: Shirt },
-  { name: "Amazon Ladies", value: "Amazon Ladies", icon: ShoppingBag },
-  { name: "SHEIN Gowns", value: "SHEIN Gowns", icon: Shirt },
-  { name: "Others", value: "Others", icon: Gem },
+  { name: "All Products", value: "all" },
+  { name: "Fresh Rabbit Meat", value: "Fresh Rabbit Meat", icon: Drumstick },
+  { name: "Rabbit Cuts", value: "Fresh Rabbit Meat", icon: Package },
+  { name: "Fried Rabbit", value: "Fried Rabbit", icon: Flame },
+  { name: "Family Packs", value: "Family Packs", icon: Users },
 ];
+
 
 const sortOptions = [
   { name: "Default", value: "default" },
@@ -168,13 +173,14 @@ const Products = () => {
             className="font-poppins text-3xl md:text-4xl font-bold text-foreground"
             variants={fadeInUp}
           >
-            Our Unique Collections
+            Fresh Rabbit Meat, Delivered Fast
           </motion.h1>
           <motion.p
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
             variants={fadeInUp}
           >
-            Explore our extensive collection of luxury thrift, fashion bundles, and unique wears.
+            Order fresh, hygienically processed rabbit meat and ready-to-eat meals —
+            delivered straight to your doorstep.
           </motion.p>
         </div>
       </motion.div>
@@ -209,12 +215,12 @@ const Products = () => {
               <SelectValue placeholder="All Categories" />
             </SelectTrigger>
             <SelectContent>
-                {categories.map((cat) => (
-                  <SelectItem key={cat.value} value={cat.value}>
-                    {cat.name}
-                  </SelectItem>
-                ))}
-              </SelectContent>
+              {categories.map((cat) => (
+                <SelectItem key={cat.value} value={cat.value}>
+                  {cat.name}
+                </SelectItem>
+              ))}
+            </SelectContent>
           </Select>
 
           {/* Sort By Select */}
@@ -292,7 +298,7 @@ const Products = () => {
         viewport={{ once: true, amount: 0.1 }}
         className="text-muted-foreground text-center mb-8"
       >
-        {isInitialLoad ? "Loading products..." : `Showing ${displayedProducts.length} of ${allProducts.length} unique wears`}
+        {isInitialLoad ? "Loading products..." : `Showing ${displayedProducts.length} of ${allProducts.length} products`}
       </motion.p>
 
       {/* Product Grid Display */}
@@ -316,7 +322,7 @@ const Products = () => {
           viewport={{ once: true, amount: 0.1 }}
           className="text-center py-16"
         >
-          <p className="text-lg text-muted-foreground mb-4">No products found matching your criteria.</p>
+          <p>No products found. Try adjusting your search or category.</p>
           <Button onClick={handleClearFilters}>Clear Filters</Button>
         </motion.div>
       )}

@@ -13,24 +13,36 @@ interface ContactInfo {
 
 const contactInfos: ContactInfo[] = [
   {
-    icon: Mail,
-    title: "Email Us",
-    details: ["support@uniqueemporium.com", "We typically respond within 24 hours."],
-  },
-  {
     icon: Phone,
     title: "Call Us",
-    details: ["+234 (906) 554-5572", "Mon-Fri, 9 AM - 5 PM WAT"],
+    details: [
+      "+256 708 875 738",
+      "+256 769 623 715",
+    ],
+  },
+  {
+    icon: Mail,
+    title: "Email Us",
+    details: [
+      "support@taltexmeathub.com",
+      "We respond as quickly as possible.",
+    ],
   },
   {
     icon: MapPin,
-    title: "Our Showroom",
-    details: ["No 4 crescent Street opposite Ace supermarket unity", "Ilorin, Kwara State, Nigeria"],
+    title: "Our Location",
+    details: [
+      "Busega",
+      "Kampala, Uganda",
+    ],
   },
   {
     icon: Clock,
     title: "Business Hours",
-    details: ["Mon-Fri: 9 AM - 6 PM", "Sat-Sun: Closed"],
+    details: [
+      "Mon – Sun: 8:00 AM – 9:00 PM",
+      "Orders accepted daily",
+    ],
   },
 ];
 

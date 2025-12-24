@@ -1,10 +1,6 @@
 "use client";
-
-import React from "react";
 import { motion, Easing, RepeatType } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-
 interface HeroItem {
   headline: string;
   subHeadline: string;
@@ -17,9 +13,9 @@ interface HeroSectionProps {
 }
 
 const heroItem: HeroItem = {
-  headline: "Unique Emporium | Nigeria’s #1 Wholesale Fashion Hub",
-  subHeadline: "Shop SHEIN gowns, kidswear, and vintage shirts in bulk at unbeatable wholesale prices. Designed for resellers and fashion entrepreneurs across Nigeria.",
-  ctaText1: "Order in Bulk Now",
+  headline: "Eat Healthy. Eat Rabbit.",
+  subHeadline: "Fresh and fried rabbit meat delivered fast to your home, office, or event anywhere in Uganda.",
+  ctaText1: "Order Now",
   ctaLink1: "/products",
 };
 
@@ -60,7 +56,7 @@ const HeroSection = ({ onScrollToFeatured }: HeroSectionProps) => {
     >
       {/* Background Image */}
       <img
-        src="/unique-emporium-hero.webp" // Using the new image
+        src="/taltex-banner.png" // Using the new image
         alt="Unique Emporium Hero Banner"
         className="absolute inset-0 h-full w-full object-cover"
       />
@@ -81,8 +77,6 @@ const HeroSection = ({ onScrollToFeatured }: HeroSectionProps) => {
           >
             <h1 className="font-poppins text-xl font-bold text-white md:text-4xl">
               {headlineParts[0]}
-              <span className="text-white">#1</span> {/* Changed text-black to text-white */}
-              {headlineParts[1]}
             </h1>
             <h2 className="font-poppins text-xs text-white/80 md:text-lg mt-2">
               {heroItem.subHeadline}

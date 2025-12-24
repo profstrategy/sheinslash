@@ -1,9 +1,8 @@
 "use client";
-
 import React from "react";
 import { motion, Easing } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import { RefreshCw, DollarSign, Package, Clock, ShieldCheck, XCircle, Tag, CheckCircle2 } from "lucide-react"; // Added CheckCircle2 icon
+import { Package, Clock, ShieldCheck, XCircle, Tag, CheckCircle2 } from "lucide-react"; // Added CheckCircle2 icon
 
 interface PolicyInfo {
   icon: React.ElementType;
@@ -14,35 +13,42 @@ interface PolicyInfo {
 const policyInfos: PolicyInfo[] = [
   {
     icon: XCircle,
-    title: "No Returns, No Exchange, No Refunds",
-    description: "All products sold in good condition are final sale.",
+    title: "No Returns or Refunds on Food Items",
+    description:
+      "Due to the perishable nature of our products, all fresh and cooked rabbit meat sales are final once delivered.",
   },
   {
     icon: CheckCircle2,
-    title: "Confirm Before Ordering",
-    description: "Please confirm product details, sizes, and quantities before completing your wholesale order.",
+    title: "Confirm Order Details Before Checkout",
+    description:
+      "Please confirm your order items, quantities, delivery address, and contact details carefully before placing your order.",
   },
   {
     icon: ShieldCheck,
-    title: "Quality Assurance",
-    description: "Unique Emporium ensures all items are carefully checked before dispatch.",
+    title: "Quality & Hygiene Assurance",
+    description:
+      "All rabbit meat is hygienically processed, properly handled, and inspected before packaging and dispatch.",
   },
   {
     icon: Package,
-    title: "Careful Packaging",
-    description: "All unique wears are carefully packed to prevent damage during transit.",
+    title: "Safe & Secure Packaging",
+    description:
+      "Orders are packed in food-grade containers designed to maintain freshness and prevent contamination during delivery.",
   },
   {
     icon: Tag,
-    title: "Wholesale Focus",
-    description: "Our policies are tailored for wholesale transactions, ensuring competitive pricing.",
+    title: "Bulk & Event Orders Policy",
+    description:
+      "Bulk, family, and event orders are prepared based on confirmed requests and are non-refundable once processing begins.",
   },
   {
     icon: Clock,
-    title: "Timely Dispatch",
-    description: "Orders are processed and dispatched promptly after payment confirmation.",
+    title: "Timely Preparation & Delivery",
+    description:
+      "Orders are prepared promptly after confirmation to ensure freshness and delivered as quickly as possible.",
   },
 ];
+
 
 const staggerContainer = {
   hidden: { opacity: 0 },

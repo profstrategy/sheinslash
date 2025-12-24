@@ -1,6 +1,4 @@
 "use client";
-
-import React from "react";
 import { motion, Easing } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 
@@ -26,7 +24,7 @@ const ShippingHero = () => {
             Nationwide Shipping & Delivery
           </h1>
           <p className="text-lg md:text-lg text-muted-foreground max-w-3xl mx-auto">
-            Everything you need to know about our shipping options, delivery times, and tracking your unique fashion order within Nigeria.
+            Everything you need to know about our shipping options, delivery times, and tracking your order within Uganda.
           </p>
         </div>
       </motion.div>

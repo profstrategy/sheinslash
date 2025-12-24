@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, useCallback, useEffect, useRef } from "react";
-import { motion, AnimatePresence, Easing, RepeatType } from "framer-motion";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import React, { useState, useCallback, useEffect } from "react";
+import { motion, AnimatePresence, Easing } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Star, Heart, ShoppingCart, ChevronLeft, ChevronRight, Shirt, Baby, Gem, Ruler, Palette, Tag, Loader2 } from "lucide-react";
+import { Star, Heart, ShoppingCart, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import FloatingTag from "@/components/common/FloatingTag.tsx";
 import { cn } from "@/lib/utils";
@@ -13,7 +13,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useCart } from "@/context/CartContext.tsx";
 import { useFavorites } from "@/context/FavoritesContext.tsx";
-import { Skeleton } from "@/components/ui/skeleton";
 import ImageWithFallback from "@/components/common/ImageWithFallback.tsx"; // Import ImageWithFallback
 
 export interface Product {
@@ -21,15 +20,23 @@ export interface Product {
   name: string;
   category: string;
   images: string[];
-  price: number; // This is the price for the MOQ
-  originalPrice?: number; // This is also the original price for the MOQ
-  discountPercentage?: number;
+
+  /** Price PER UNIT (not bulk) */
+  price: number;
+
+  /** Optional original unit price (for discounts) */
+  originalPrice?: number;
+
   rating: number;
   reviewCount: number;
+
+  /** UI helpers */
   tag?: string;
   tagVariant?: "default" | "secondary" | "destructive" | "outline";
   limitedStock?: boolean;
-  minOrderQuantity: number; // Added minOrderQuantity
+
+  /** Food-specific */
+  minOrderQuantity: number; // 👈 REQUIRED (usually 1)
 }
 
 interface ProductCardProps {
@@ -70,18 +77,18 @@ const ProductCard = ({ product, disableEntryAnimation = false }: ProductCardProp
     };
   }, [emblaApi, onSelect]);
 
-  const unitPrice = product.price / product.minOrderQuantity;
-  const originalUnitPrice = product.originalPrice ? product.originalPrice / product.minOrderQuantity : undefined;
+  const unitPrice = product.price;
+  // const originalUnitPrice = product.originalPrice ? product.originalPrice / product.minOrderQuantity : undefined;
 
-  const discount = originalUnitPrice && unitPrice < originalUnitPrice
-    ? Math.round(((originalUnitPrice - unitPrice) / originalUnitPrice) * 100)
-    : 0;
+  // const discount = originalUnitPrice && unitPrice < originalUnitPrice
+  //   ? Math.round(((originalUnitPrice - unitPrice) / originalUnitPrice) * 100)
+  //   : 0;
 
   const handleAddToCart = async (e: React.MouseEvent) => {
     e.stopPropagation();
     setIsAddingToCart(true);
     await new Promise(resolve => setTimeout(resolve, 500));
-    addToCart(product, product.minOrderQuantity); // Add minOrderQuantity
+    addToCart(product, product.minOrderQuantity);
     setIsAddingToCart(false);
   };
 
@@ -105,8 +112,8 @@ const ProductCard = ({ product, disableEntryAnimation = false }: ProductCardProp
   return (
     <motion.div
       variants={disableEntryAnimation ? {} : fadeInUp}
-      initial={disableEntryAnimation ? null : "hidden"}
-      whileInView={disableEntryAnimation ? null : "visible"}
+      // initial={disableEntryAnimation ? null : "hidden"}
+      // whileInView={disableEntryAnimation ? null : "visible"}
       viewport={{ once: true, amount: 0.2 }}
       className="relative h-[340px] flex flex-col cursor-pointer"
       onMouseEnter={() => setHovered(true)}
@@ -213,7 +220,7 @@ const ProductCard = ({ product, disableEntryAnimation = false }: ProductCardProp
                   {isAddingToCart ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Adding {product.minOrderQuantity}
+                      Adding {product.price}
                     </>
                   ) : (
                     <>
@@ -257,7 +264,7 @@ const ProductCard = ({ product, disableEntryAnimation = false }: ProductCardProp
               {unitPrice.toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}
             </p>
             {/* This span will only be visible on desktop (md and up) */}
-            {originalUnitPrice && unitPrice < originalUnitPrice && (
+            {/* {originalUnitPrice && unitPrice < originalUnitPrice && (
               <span className="hidden md:flex items-center gap-2">
                 <p className="text-xs text-gray-400 line-through">
                   {originalUnitPrice.toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })}
@@ -268,13 +275,13 @@ const ProductCard = ({ product, disableEntryAnimation = false }: ProductCardProp
                   </Badge>
                 )}
               </span>
-            )}
+            )} */}
           </div>
 
           {/* MOQ Display */}
-          <p className="text-xs text-muted-foreground font-medium mb-1">
+          {/* <p className="text-xs text-muted-foreground font-medium mb-1">
             MOQ: {product.minOrderQuantity} pcs
-          </p>
+          </p> */}
 
           {/* Limited Stock Message */}
           {product.limitedStock && (
@@ -291,7 +298,7 @@ const ProductCard = ({ product, disableEntryAnimation = false }: ProductCardProp
           {/* Footer Actions - This div has mt-auto and will always be at the bottom */}
           <div className="mt-auto pt-2">
             {/* Mobile-specific layout: original price, discount, and favorite icon */}
-            <div className="flex items-center justify-between md:hidden">
+            {/* <div className="flex items-center justify-between md:hidden">
               {originalUnitPrice && unitPrice < originalUnitPrice && (
                 <div className="flex items-center gap-2">
                   <p className="text-xs text-gray-400 line-through">
@@ -311,7 +318,7 @@ const ProductCard = ({ product, disableEntryAnimation = false }: ProductCardProp
               >
                 <Heart className={cn("h-4 w-4", favorited && "fill-red-500 text-red-500")} />
               </Button>
-            </div>
+            </div> */}
 
             {/* Desktop-specific layout: View Details link and favorite icon */}
             <div className="hidden md:flex items-center justify-between">

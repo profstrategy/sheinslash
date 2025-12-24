@@ -1,6 +1,4 @@
 "use client";
-
-import React from "react";
 import ReturnsHero from "@/components/returns-page/ReturnsHero";
 import ReturnsPolicyCards from "@/components/returns-page/ReturnsPolicyCards";
 import ReturnsCTA from "@/components/returns-page/ReturnsCTA";

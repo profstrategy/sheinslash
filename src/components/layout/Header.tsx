@@ -1,20 +1,18 @@
 "use client";
-
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Menu, X, Search, Heart, ChevronDown, Shirt, Baby, Gem, ShoppingBag, User, LayoutDashboard } from "lucide-react"; // Added LayoutDashboard
+import { Menu, X, Search, Heart, ChevronDown, Gem, Drumstick, Package, Flame, Users} from "lucide-react";
 import Badge from "@/components/common/Badge.tsx";
 import CartIcon from "@/components/common/CartIcon.tsx";
 import SlideOutSearchBar from "./SlideOutSearchBar.tsx";
 import MobileMenu from "./MobileMenu.tsx";
 import CartDrawer from "./CartDrawer.tsx";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { motion } from "framer-motion";
 import { useCart } from "@/context/CartContext.tsx";
 import { useFavorites } from "@/context/FavoritesContext.tsx";
-import UniqueEmporiumLogo from "@/components/logo/UniqueEmporiumLogo.tsx"; // Import the new logo component
+import UniqueEmporiumLogo from "@/components/logo/Taltex-logo.tsx";
 
 interface HeaderProps {
   isCartDrawerOpen: boolean;
@@ -22,13 +20,10 @@ interface HeaderProps {
 }
 
 const categories = [
-  { name: "Kids", icon: Baby, link: "/products?category=Kids" },
-  { name: "Kids Patpat", icon: Baby, link: "/products?category=Kids Patpat" },
-  { name: "Children Jeans", icon: Baby, link: "/products?category=Children Jeans" },
-  { name: "Children Shirts", icon: Baby, link: "/products?category=Children Shirts" },
-  { name: "Men Vintage Shirts", icon: Shirt, link: "/products?category=Men Vintage Shirts" },
-  { name: "Amazon Ladies", icon: ShoppingBag, link: "/products?category=Amazon Ladies" },
-  { name: "SHEIN Gowns", icon: Shirt, link: "/products?category=SHEIN Gowns" },
+  { name: "Fresh Whole Rabbit", icon: Drumstick, link: "/products?category=Fresh Rabbit Meat" },
+  { name: "Fresh Rabbit Cuts Pack", icon: Package, link: "/products?category=Rabbit Cuts" },
+  { name: "Fried Rabbit Portion", icon: Flame, link: "/products?category=Fried Rabbit" },
+  { name: "Family Packs", icon: Users, link: "/products?category=Family Packs" },
   { name: "Others", icon: Gem, link: "/products?category=Others" },
 ];
 
@@ -36,7 +31,7 @@ const Header = ({ isCartDrawerOpen, setIsCartDrawerOpen }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
   const navigate = useNavigate();
-  const isMobile = useIsMobile(); // This now returns true for mobile and tablet
+  const isMobile = useIsMobile();
   const { totalItems } = useCart();
   const { totalFavorites } = useFavorites();
 
@@ -49,9 +44,9 @@ const Header = ({ isCartDrawerOpen, setIsCartDrawerOpen }: HeaderProps) => {
     }
   };
 
-  const handleCategoryClick = (link: string) => {
-    navigate(link);
-  };
+  // const handleCategoryClick = (link: string) => {
+  //   navigate(link);
+  // };
 
   return (
     <>
@@ -88,7 +83,7 @@ const Header = ({ isCartDrawerOpen, setIsCartDrawerOpen }: HeaderProps) => {
                   Categories <ChevronDown className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-64 p-2 grid grid-cols-2 gap-2">
+              <DropdownMenuContent className="w-full p-2 grid grid-cols-2 gap-2">
                 {categories.map((category) => (
                   <DropdownMenuItem key={category.name} asChild>
                     <Link to={category.link} className="flex items-center gap-2 cursor-pointer hover:bg-accent rounded-md p-2">
@@ -117,14 +112,14 @@ const Header = ({ isCartDrawerOpen, setIsCartDrawerOpen }: HeaderProps) => {
               Contact
             </NavLink>
             {/* Temporary Admin Link */}
-            <NavLink
+            {/* <NavLink
               to="/admin"
               className={({ isActive }) =>
                 `text-foreground transition-colors duration-200 ${isActive ? "text-primary font-semibold" : "hover:text-primary"}`
               }
             >
               Admin
-            </NavLink>
+            </NavLink> */}
           </nav>
 
           {/* Utility Icons */}
@@ -143,13 +138,13 @@ const Header = ({ isCartDrawerOpen, setIsCartDrawerOpen }: HeaderProps) => {
             <CartIcon onOpenCartDrawer={() => setIsCartDrawerOpen(true)} />
 
             {/* Account Dashboard Link (Hidden on mobile/tablet, visible on large screens) */}
-            {!isMobile && ( // isMobile is now true for screens < 1024px
+            {/* {!isMobile && ( // isMobile is now true for screens < 1024px
               <Link to="/account" className="relative">
                 <Button variant="ghost" size="icon">
                   <User className="h-5 w-5" />
                 </Button>
               </Link>
-            )}
+            )} */}
 
             {/* Mobile Menu Button (visible on mobile/tablet, hidden on large screens) */}
             <Button

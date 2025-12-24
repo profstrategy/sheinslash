@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion, Easing } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Users, ShoppingBag, Star, Award } from "lucide-react"; // Updated icon for products
 
 interface Stat {
@@ -12,8 +12,8 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { icon: Users, value: "50K+", label: "Happy Fashionistas" },
-  { icon: ShoppingBag, value: "200+", label: "Bundles Shipped Daily" },
+  { icon: Users, value: "50K+", label: "Happy Reviews" },
+  { icon: ShoppingBag, value: "200+", label: "Rabbit Meat Shipped Daily" },
   { icon: Star, value: "4.8/5", label: "Average Rating" },
   { icon: Award, value: "5+", label: "Years in Fashion" },
 ];

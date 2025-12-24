@@ -1,6 +1,4 @@
 "use client";
-
-import React from "react";
 import { motion, Easing } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 
@@ -18,13 +16,16 @@ const AboutHero = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <Badge variant="outline" className="mb-4 text-sm">Our Journey</Badge>
+        <Badge variant="outline" className="mb-4 text-sm">Who We Are</Badge>
         <div className="space-y-2">
           <h1 className="font-poppins text-2xl md:text-6xl font-bold text-foreground">
-            Unveiling Your Unique Style
+            Healthy Meat For You
           </h1>
           <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            At Unique Emporium, we believe in the power of fashion to express individuality. We're dedicated to bringing you curated luxury thrift and fashion bundles with unparalleled service.
+            Taltex Meathub is an innovative online restaurant specializing in fresh and fried rabbit meat. We
+            combine high-quality food production with digital convenience, offering customers a healthier
+            alternative to ordinary meat. Our focus is on hygiene, nutrition, and fast delivery to homes, offices,
+            and events across Uganda.
           </p>
         </div>
       </motion.div>

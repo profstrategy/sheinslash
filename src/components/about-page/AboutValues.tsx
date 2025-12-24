@@ -2,9 +2,9 @@
 
 import React from "react";
 import { motion, Easing } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Lightbulb, Handshake, Leaf, Sparkles, Gem, TrendingUp } from "lucide-react"; // Updated icons
+import { Lightbulb, Leaf, Sparkles, Gem, TrendingUp } from "lucide-react"; // Updated icons
 
 interface Value {
   icon: React.ElementType;
@@ -15,23 +15,28 @@ interface Value {
 const values: Value[] = [
   {
     icon: Sparkles,
-    title: "Uniqueness",
-    description: "We celebrate individual style, offering pieces that help you stand out.",
+    title: "Quality",
+    description: "Uncompromising food hygiene and freshness.",
   },
   {
     icon: Gem,
-    title: "Quality Thrift",
-    description: "Curating premium pre-loved fashion that feels luxurious and lasts.",
+    title: "Health",
+    description: "Nutritious and protein-rich options.",
   },
   {
     icon: Leaf,
-    title: "Sustainability",
-    description: "Committed to eco-friendly fashion choices and reducing waste.",
+    title: "Customer Focus",
+    description: "Convenience and satisfaction at the forefront.",
   },
   {
     icon: TrendingUp,
-    title: "Trendsetting",
-    description: "Staying ahead of fashion curves to bring you the latest and timeless styles.",
+    title: "Innovation",
+    description: "Using digital tools to enhance ordering and delivery.",
+  },
+   {
+    icon: Lightbulb,
+    title: "Integrity",
+    description: "Transparent sourcing and honest business practices.",
   },
 ];
 
@@ -62,7 +67,7 @@ const AboutValues = () => {
       >
         <Badge variant="outline" className="mb-4 text-sm">Our Principles</Badge>
         <h2 className="font-poppins text-3xl md:text-4xl font-bold mb-6 text-foreground">
-          The Values That Define Our Style
+          Our Core Values 
         </h2>
       </motion.div>
 

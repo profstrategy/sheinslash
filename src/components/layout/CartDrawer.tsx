@@ -1,6 +1,5 @@
 "use client";
-
-import React, { useState } from "react";
+import{ useState } from "react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { ShoppingBag, Plus, Minus, Trash2, CreditCard, Loader2 } from "lucide-react";
@@ -47,9 +46,8 @@ const CartDrawer = ({ isOpen, onClose }: CartDrawerProps) => {
                     <div>
                       <p className="font-medium">{item.name}</p>
                       <p className="text-sm text-muted-foreground">
-                        ₦{item.unitPrice.toLocaleString('en-NG', { minimumFractionDigits: 2 })} / pc
-                      </p> {/* Display unit price */}
-                      <p className="text-xs text-muted-foreground">MOQ: {item.minOrderQuantity} pcs</p> {/* Display MOQ */}
+                        ₦{item.unitPrice.toLocaleString('en-NG', { minimumFractionDigits: 2 })}
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
@@ -57,17 +55,26 @@ const CartDrawer = ({ isOpen, onClose }: CartDrawerProps) => {
                       variant="outline"
                       size="icon"
                       className="h-7 w-7"
-                      onClick={() => updateQuantity(item.id, item.quantity - item.minOrderQuantity)}
-                      disabled={item.quantity <= item.minOrderQuantity}
+                      onClick={() => {
+                        if (item.quantity <= 1) {
+                          removeFromCart(item.id);
+                        } else {
+                          updateQuantity(item.id, item.quantity - 1);
+                        }
+                      }}
                     >
-                      <Minus className="h-4 w-4" />
+                      {item.quantity <= 1 ? (
+                        <Trash2 className="h-4 w-4" />
+                      ) : (
+                        <Minus className="h-4 w-4" />
+                      )}
                     </Button>
                     <span className="w-6 text-center text-sm font-medium">{item.quantity}</span>
                     <Button
                       variant="outline"
                       size="icon"
                       className="h-7 w-7"
-                      onClick={() => updateQuantity(item.id, item.quantity + item.minOrderQuantity)}
+                      onClick={() => updateQuantity(item.id, item.quantity + 1)}
                     >
                       <Plus className="h-4 w-4" />
                     </Button>

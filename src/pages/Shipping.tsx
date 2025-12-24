@@ -1,6 +1,4 @@
 "use client";
-
-import React from "react";
 import ShippingHero from "@/components/shipping-page/ShippingHero";
 import ShippingInfoCards from "@/components/shipping-page/ShippingInfoCards";
 import ShippingCTA from "@/components/shipping-page/ShippingCTA";

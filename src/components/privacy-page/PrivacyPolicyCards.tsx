@@ -14,33 +14,39 @@ interface PrivacyInfo {
 const policyInfos: PrivacyInfo[] = [
   {
     icon: Database,
-    title: "Data Collection",
-    description: "We collect necessary data to process orders and enhance your fashion shopping experience.",
+    title: "Information We Collect",
+    description:
+      "We collect essential information such as your name, phone number, delivery address, and order details to process and deliver your orders efficiently.",
   },
   {
     icon: BarChart2,
-    title: "Data Usage",
-    description: "Your data is used for order fulfillment, customer support, and personalized style recommendations.",
+    title: "How We Use Your Information",
+    description:
+      "Your information is used to confirm orders, process payments, provide delivery updates, and improve our services.",
   },
   {
     icon: Lock,
-    title: "Data Protection",
-    description: "We employ robust security measures to protect your personal information from unauthorized access.",
+    title: "Data Security",
+    description:
+      "We use appropriate security measures to protect your personal information from unauthorized access, loss, or misuse.",
   },
   {
     icon: UserCheck,
-    title: "Your Rights",
-    description: "You have the right to access, modify, or delete your personal data at any time.",
+    title: "Your Privacy Rights",
+    description:
+      "You have the right to request access to, correction of, or deletion of your personal information, subject to applicable laws.",
   },
   {
     icon: Cookie,
-    title: "Cookie Policy",
-    description: "We use cookies to enhance site functionality, analyze traffic, and personalize content and offers.",
+    title: "Cookies & Tracking",
+    description:
+      "We use cookies and similar technologies to improve website functionality, understand user behavior, and enhance your browsing experience.",
   },
   {
     icon: Share2,
-    title: "Third-Party Disclosure",
-    description: "We do not sell or trade your personal information with outside parties, except for trusted partners necessary for service delivery.",
+    title: "Information Sharing",
+    description:
+      "We do not sell your personal information. Data may only be shared with trusted partners such as payment providers and delivery services when necessary to fulfill your order.",
   },
 ];
 
