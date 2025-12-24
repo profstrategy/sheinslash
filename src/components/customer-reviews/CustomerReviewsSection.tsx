@@ -1,11 +1,9 @@
 "use client";
-
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, Easing } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Star, MessageSquare } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
-import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 interface Review {
@@ -21,45 +19,46 @@ const mockReviews: Review[] = [
     id: "cr1",
     author: "Aisha O.",
     rating: 5,
-    comment: "The SHEIN gown I ordered is absolutely stunning! Unique Emporium truly delivers on luxury and comfort. Fast delivery too!",
+    comment: "The rabbit meat was extremely fresh and well packaged. Cooked beautifully and tasted amazing. I’ll definitely order again.",
     date: "July 20, 2024",
   },
   {
     id: "cr2",
     author: "Chinedu E.",
     rating: 5,
-    comment: "My vintage graphic tee is a gem! The quality is fantastic for a thrift find. I love the unique style.",
+    comment: "Very clean cuts and great quality meat. Delivery was fast and everything arrived in perfect condition.",
     date: "July 18, 2024",
   },
   {
     id: "cr3",
     author: "Blessing N.",
     rating: 5,
-    comment: "The kids' distressed jeans are perfect for my son. Stylish, durable, and he loves them! Highly recommend Unique Emporium.",
+    comment: "I bought this for my family and everyone loved it. Healthy, tender, and easy to cook. Highly recommended.",
     date: "July 22, 2024",
   },
   {
     id: "cr4",
     author: "Amaka J.",
     rating: 5,
-    comment: "The Ladies' Casual Chic Fashion Bundle exceeded my expectations. Great value and all pieces are beautiful. Will definitely shop again!",
+    comment: "Excellent value for the family pack. The meat was fresh and properly handled. Great service overall.",
     date: "July 25, 2024",
   },
   {
     id: "cr5",
     author: "Fatima G.",
     rating: 5,
-    comment: "My luxury silk scarf is exquisite! It feels so luxurious and looks brand new. A fantastic sustainable fashion choice.",
+    comment: "I appreciate how hygienic and fresh everything was. Perfect for my healthy meal plans.",
     date: "July 28, 2024",
   },
   {
     id: "cr6",
     author: "David O.",
     rating: 4,
-    comment: "The vintage denim jacket is a classic. Great quality, though a bit stiff at first. It's a timeless piece.",
+    comment: "Good quality rabbit meat and fair pricing. Delivery was smooth, and the meat tasted great.",
     date: "July 29, 2024",
   },
 ];
+
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50, x: -50 },

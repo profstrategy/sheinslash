@@ -1,6 +1,4 @@
 "use client";
-
-import React from "react";
 import { motion, Easing } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 

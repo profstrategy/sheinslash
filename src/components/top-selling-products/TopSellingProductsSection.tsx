@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, Easing } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, TrendingUp, Shirt } from "lucide-react"; // Changed icon to Shirt
+import { ChevronLeft, ChevronRight, Shirt } from "lucide-react"; // Changed icon to Shirt
 import useEmblaCarousel from "embla-carousel-react";
 import ProductCard, { Product } from "@/components/products/ProductCard.tsx";
 import { mockProducts, ProductDetails } from "@/data/products.ts";

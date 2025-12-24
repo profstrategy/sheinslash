@@ -9,8 +9,8 @@ import Footer from "./components/layout/Footer.tsx";
 import { CartProvider } from "./context/CartContext.tsx";
 import { FavoritesProvider } from "./context/FavoritesContext.tsx";
 import ScrollToTop from "./components/common/ScrollToTop.tsx";
-import LoadingPage from "./components/common/LoadingPage.tsx"; // Import the new LoadingPage
-import FloatingWhatsApp from "./components/layout/FloatingWhatsApp.tsx"; // Import FloatingWhatsApp
+import LoadingPage from "./components/common/LoadingPage.tsx";
+import FloatingWhatsApp from "./components/layout/FloatingWhatsApp.tsx";
 
 // Lazily load page components for code splitting
 const Index = lazy(() => import("./pages/Index.tsx"));
@@ -37,13 +37,13 @@ const OrderHistoryPage = lazy(() => import("./pages/account/OrderHistoryPage.tsx
 const PaymentReceiptsPage = lazy(() => import("./pages/account/PaymentReceiptsPage.tsx"));
 
 // Admin Dashboard Pages
-const AdminLayout = lazy(() => import("./components/admin/AdminLayout.tsx"));
-const AdminDashboardOverview = lazy(() => import("./pages/admin/DashboardOverview.tsx"));
-const AdminOrdersManagement = lazy(() => import("./pages/admin/OrdersManagement.tsx"));
-const AdminProductsManagement = lazy(() => import("./pages/admin/ProductsManagement.tsx"));
-const AdminCategoriesManagement = lazy(() => import("./pages/admin/CategoriesManagement.tsx"));
-const AdminUsersManagement = lazy(() => import("./pages/admin/UsersManagement.tsx"));
-const AdminAnalyticsDashboard = lazy(() => import("./pages/admin/AnalyticsDashboard.tsx")); // New import
+// const AdminLayout = lazy(() => import("./components/admin/AdminLayout.tsx"));
+// const AdminDashboardOverview = lazy(() => import("./pages/admin/DashboardOverview.tsx"));
+// const AdminOrdersManagement = lazy(() => import("./pages/admin/OrdersManagement.tsx"));
+// const AdminProductsManagement = lazy(() => import("./pages/admin/ProductsManagement.tsx"));
+// const AdminCategoriesManagement = lazy(() => import("./pages/admin/CategoriesManagement.tsx"));
+// const AdminUsersManagement = lazy(() => import("./pages/admin/UsersManagement.tsx"));
+// const AdminAnalyticsDashboard = lazy(() => import("./pages/admin/AnalyticsDashboard.tsx"));
 
 
 const queryClient = new QueryClient();
@@ -64,7 +64,7 @@ const App = () => {
                   isCartDrawerOpen={isCartDrawerOpen}
                   setIsCartDrawerOpen={setIsCartDrawerOpen}
                 />
-                <Suspense fallback={<LoadingPage />}> {/* Wrap Routes with Suspense */}
+                <Suspense fallback={<LoadingPage />}>
                   <Routes>
                     <Route path="/" element={<Index />} />
                     <Route path="/favorites" element={<Favorites />} />
@@ -88,19 +88,19 @@ const App = () => {
                       <Route path="receipts" element={<PaymentReceiptsPage />} />
                     </Route>
                     {/* Admin Dashboard Routes */}
-                    <Route path="/admin" element={<AdminLayout />}>
-                      <Route index element={<AdminDashboardOverview />} /> {/* Default route for /admin */}
+                    {/* <Route path="/admin" element={<AdminLayout />}>
+                      <Route index element={<AdminDashboardOverview />} /> 
                       <Route path="orders" element={<AdminOrdersManagement />} />
                       <Route path="products" element={<AdminProductsManagement />} />
                       <Route path="categories" element={<AdminCategoriesManagement />} />
                       <Route path="users" element={<AdminUsersManagement />} />
-                      <Route path="analytics" element={<AdminAnalyticsDashboard />} /> {/* New Admin Analytics Route */}
-                    </Route>
+                      <Route path="analytics" element={<AdminAnalyticsDashboard />} /> 
+                    </Route> */}
                     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </Suspense>
-                <FloatingWhatsApp /> {/* Add the FloatingWhatsApp component here */}
+                <FloatingWhatsApp />
                 <Footer />
             </FavoritesProvider>
           </CartProvider>

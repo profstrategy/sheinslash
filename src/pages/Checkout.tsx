@@ -1,7 +1,6 @@
 "use client";
-
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, Easing } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, Easing } from "framer-motion";
 import CheckoutHeader from "@/components/checkout/CheckoutHeader.tsx";
 import CheckoutProgress from "@/components/checkout/CheckoutProgress.tsx";
 import OrderSummaryCard from "@/components/checkout/OrderSummaryCard.tsx";
@@ -12,7 +11,6 @@ import BankTransferPaymentForm from "@/components/checkout/BankTransferPaymentFo
 import OrderReview from "@/components/checkout/OrderReview.tsx";
 import { useCart } from "@/context/CartContext.tsx";
 import { toast } from "sonner";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
 import type { ShippingFormData } from "@/components/checkout/ShippingForm.tsx";
 import type { BankTransferFormData } from "@/components/checkout/BankTransferPaymentForm.tsx";
@@ -46,7 +44,6 @@ const Checkout = () => {
   const [isOrderPlaced, setIsOrderPlaced] = useState(false);
   const [direction, setDirection] = useState(0);
   const [isPlacingOrder, setIsPlacingOrder] = useState(false);
-  const isMobile = useIsMobile();
 
   useEffect(() => {
     if (cartItems.length === 0 && !isOrderPlaced) {

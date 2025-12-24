@@ -3,7 +3,7 @@
 import HeroSection from "@/components/hero-section/HeroSection.tsx";
 import CategoriesSection from "@/components/categories-section/CategoriesSection.tsx";
 import ProductCard, { Product } from "@/components/products/ProductCard.tsx";
-import WhyChooseUsSection from "@/components/why-choose-us/WhyChooseUsSection.tsx";
+import WhyChooseUsSection from "@/components/healt-benefit/health-benefit";
 import CustomerReviewsSection from "@/components/customer-reviews/CustomerReviewsSection.tsx";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -11,20 +11,16 @@ import { motion, Easing } from "framer-motion";
 import { mockProducts, ProductDetails, getProductsByIds } from "@/data/products.ts";
 import RecentlyViewedProductsSection from "@/components/product-details/RecentlyViewedProductsSection.tsx";
 import TopSellingProductsSection from "@/components/top-selling-products/TopSellingProductsSection.tsx";
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import ProductCardSkeleton from "@/components/products/ProductCardSkeleton.tsx";
 import ImageWithFallback from "@/components/common/ImageWithFallback.tsx"; // Import ImageWithFallback
 
 // Select specific products from mockProducts to be featured
 const featuredProductIds = [
-  mockProducts.find(p => p.name === "SHEIN Elegant Floral Maxi Gown")?.id || "",
-  mockProducts.find(p => p.name === "Vintage 90s Graphic T-Shirt")?.id || "",
-  mockProducts.find(p => p.name === "Kids' Stylish Distressed Denim Jeans")?.id || "",
-  mockProducts.find(p => p.name === "Ladies' Casual Chic Fashion Bundle")?.id || "",
-  mockProducts.find(p => p.name === "Luxury Thrift Silk Scarf (Designer)")?.id || "",
-  mockProducts.find(p => p.name === "Men's Urban Streetwear Fashion Bundle")?.id || "",
-  mockProducts.find(p => p.name === "SHEIN Flowy Summer Midi Dress")?.id || "", // Added new product
-  mockProducts.find(p => p.name === "Vintage Leather Crossbody Bag")?.id || "", // Added new product
+  mockProducts.find(p => p.name === "Fresh Whole Rabbit")?.id || "",
+  mockProducts.find(p => p.name === "Fresh Rabbit Cuts Pack")?.id || "",
+  mockProducts.find(p => p.name === "Fried Rabbit Portion")?.id || "",
+  mockProducts.find(p => p.name === "Family Rabbit Pack")?.id || "",
 ].filter(id => id !== "");
 
 const staggerContainer = {
@@ -77,19 +73,19 @@ const Index = () => {
       <HeroSection onScrollToFeatured={scrollToFeaturedProducts} />
 
       {/* Moved introductory text before CategoriesSection */}
-      <motion.p
+      {/* <motion.p
         className="font-semibold text-base md:text-xl lg:text-2xl text-primary mt-2 mb-2 px-4 sm:px-6 lg:px-8 text-center mx-auto lg:whitespace-nowrap"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" as Easing }}
       >
         Luxury Wholesale Fashion for Smart Resellers
-      </motion.p>
+      </motion.p> */}
 
       <CategoriesSection />
 
       {/* Featured Products Section */}
-      <section id="featured-products-section" ref={featuredProductsRef} className="pt-4 pb-16 bg-muted/30">
+      <section id="featured-products-section" ref={featuredProductsRef} className="pt-4 pb-16 bg-muted/30 mt-8">
         <motion.div
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
           variants={staggerContainer}
@@ -97,24 +93,17 @@ const Index = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {/* Moved paragraph */}
-          <motion.p
-            className="text-sm md:text-lg lg:text-xl text-muted-foreground mt-2 mb-8 md:mb-12" // Changed mt-4 to mt-2
-            variants={fadeInUp}
-          >
-            Explore the latest SHEIN gowns, vintage shirts, kids’ jeans, and fashion bundles with easy navigation, smart picks, and clear checkout.
-          </motion.p>
           <motion.h2
             className="font-poppins font-bold text-xl md:text-4xl text-foreground"
             variants={fadeInUp}
           >
-            Featured Collections
+            Weekly Deals
           </motion.h2>
           <motion.p
             className="text-sm text-muted-foreground mt-2 mb-8 md:mb-12"
             variants={fadeInUp}
           >
-            Discover our most popular SHEIN gowns, vintage shirts, and fashion bundles
+            Discover our most popular Weekly availble products
           </motion.p>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-2 md:gap-5">
@@ -127,14 +116,14 @@ const Index = () => {
 
           <motion.div variants={fadeInUp} className="mt-12">
             <Button size="lg" variant="outline" asChild>
-              <Link to="/products">Shop the Collection</Link>
+              <Link to="/products">Shop available products</Link>
             </Button>
           </motion.div>
         </motion.div>
       </section>
 
       {/* Moved Banner Image */}
-      <motion.div
+      {/* <motion.div
         className="relative w-full max-w-5xl mx-auto h-48 md:h-64 rounded-xl overflow-hidden shadow-lg mt-8 mb-12 px-4 sm:px-6 lg:px-8"
         variants={fadeInUp}
         initial="hidden"
@@ -146,7 +135,7 @@ const Index = () => {
           alt="Unique Emporium Fashion Banner"
           containerClassName="w-full h-full"
         />
-      </motion.div>
+      </motion.div> */}
 
       {/* Top Selling Products Section (on Home Page) */}
       <motion.div

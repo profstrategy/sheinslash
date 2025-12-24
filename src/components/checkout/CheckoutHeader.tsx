@@ -1,6 +1,4 @@
 "use client";
-
-import React from "react";
 import { motion, Easing } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";

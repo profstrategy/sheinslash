@@ -1,29 +1,25 @@
 "use client";
-
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, Easing } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Shirt, Baby, Gem, ShoppingBag, LucideIcon } from "lucide-react";
+import { Gem, LucideIcon, Flame, Package, Users, Drumstick } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { cn } from "@/lib/utils"; // Import cn for conditional classNames
-import ImageWithFallback from "@/components/common/ImageWithFallback.tsx"; // Import ImageWithFallback
+import { cn } from "@/lib/utils";
+import ImageWithFallback from "@/components/common/ImageWithFallback.tsx";
 
 interface Category {
   name: string;
   icon: LucideIcon;
   description: string;
   link: string;
-  image: string | undefined; // Changed type to allow undefined
+  image?: string;
 }
 
 const categories: Category[] = [
-  { name: "Kids", icon: Baby, description: "Wholesale kids' fashion", link: "/products?category=Kids", image: undefined },
-  { name: "Kids Patpat", icon: Baby, description: "Patpat brand kids' wear", link: "/products?category=Kids Patpat", image: undefined },
-  { name: "Children Jeans", icon: Baby, description: "Bulk children's denim", link: "/products?category=Children Jeans", image: undefined },
-  { name: "Children Shirts", icon: Baby, description: "Wholesale kids' tops", link: "/products?category=Children Shirts", image: undefined },
-  { name: "Men Vintage Shirts", icon: Shirt, description: "Bulk vintage shirts for men", link: "/products?category=Men Vintage Shirts", image: undefined },
-  { name: "Amazon Ladies", icon: ShoppingBag, description: "Bulk Amazon ladies' wear", link: "/products?category=Amazon Ladies", image: undefined },
-  { name: "SHEIN Gowns", icon: Shirt, description: "Wholesale SHEIN dresses", link: "/products?category=SHEIN Gowns", image: undefined },
+  { name: "Fresh Rabbit Meat", description: "Fresh Rabbit Meat", icon: Drumstick, link: "/products?category=Fresh Rabbit Meat" },
+  { name: "Rabbit Cuts", description: "Fresh Rabbit Meat", icon: Package, link: "/products?category=Rabbit Cuts" },
+  { name: "Fried Rabbit", description: "Fried Rabbit", icon: Flame, link: "/products?category=Fried Rabbit" },
+  { name: "Family Packs", description: "Family Packs", icon: Users, link: "/products?category=Family Packs" },
   { name: "Others", icon: Gem, description: "Miscellaneous wholesale items", link: "/products?category=Others", image: undefined },
 ];
 
@@ -32,7 +28,7 @@ const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.07, // Adjusted stagger for individual cards
+      staggerChildren: 0.07,
       delayChildren: 0.2,
     },
   },
@@ -52,14 +48,14 @@ const CategoriesSection = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
   const isMobile = useIsMobile();
-  const scrollSpeed = 1; // Adjust scroll speed as needed
+  const scrollSpeed = 1;
 
   // Conditionally create the list of categories to display
   const categoriesToDisplay = isMobile ? [...categories, ...categories] : categories;
 
   useEffect(() => {
     const scrollElement = scrollRef.current;
-    if (!scrollElement || !isMobile) { // Only auto-scroll if on mobile
+    if (!scrollElement || !isMobile) {
       return;
     }
 
@@ -70,7 +66,7 @@ const CategoriesSection = () => {
       if (!lastTimestamp) lastTimestamp = timestamp;
       const elapsed = timestamp - lastTimestamp;
 
-      if (elapsed > 16 && !isPaused) { // Only scroll if not paused
+      if (elapsed > 16 && !isPaused) {
         scrollElement.scrollLeft += scrollSpeed;
         
         const singleSetWidth = scrollElement.scrollWidth / 2; 
@@ -91,11 +87,11 @@ const CategoriesSection = () => {
   }, [isPaused, isMobile, scrollSpeed]);
 
   return (
-    <section className="relative py-[0.4rem]"> {/* Removed gradient from section */}
+    <section className="relative py-[0.4rem]">
       <motion.div
         className={cn(
           "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center",
-          "p-6 rounded-xl bg-primary/40" // Changed from bg-primary/5 to bg-primary/40
+          "p-6 rounded-xl bg-primary/40"
         )}
         variants={staggerContainer}
         initial="hidden"
@@ -107,13 +103,13 @@ const CategoriesSection = () => {
           className="font-poppins font-bold text-xl md:text-4xl text-foreground"
           variants={fadeInUp}
         >
-          Explore Our Collections
+          Premium Rabbit Meat, Made Easy
         </motion.h2>
         <motion.p
           className="text-sm text-muted-foreground mt-2 mb-8 md:mb-12"
           variants={fadeInUp}
         >
-          Find the perfect style to express your uniqueness
+          Fresh cuts, family packs, and ready-to-eat options you can trust
         </motion.p>
 
         {/* Category Cards Container */}
@@ -146,12 +142,7 @@ const CategoriesSection = () => {
                 </div>
                 {/* Category Name */}
                 <p className="text-sm md:text-base lg:text-lg font-bold text-gray-900 text-center mt-2 leading-tight">
-                  {category.name.split(' ').map((word, i) => (
-                    <React.Fragment key={i}>
-                      {word}
-                      {i < category.name.split(' ').length - 1 && <br />}
-                    </React.Fragment>
-                  ))}
+                  {category.name}
                 </p>
               </Link>
             </motion.div>

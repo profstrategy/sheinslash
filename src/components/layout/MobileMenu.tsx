@@ -1,10 +1,8 @@
 "use client";
-
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { useNavigate } from "react-router-dom";
+import { Sheet, SheetContent, SheetHeader } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Heart, Shirt, Baby, Gem, ShoppingBag, Info, Mail, List, User, LogOut, Home, LayoutDashboard } from "lucide-react"; // Import Home and LayoutDashboard icon
+import { Heart, Shirt, Baby, Gem, ShoppingBag, Info, Mail, List, User, Home } from "lucide-react";
 import Badge from "@/components/common/Badge.tsx";
 import { motion, Easing } from "framer-motion";
 import { useCart } from "@/context/CartContext.tsx";
@@ -16,8 +14,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { accountNavItems } from "@/data/accountNavItems.ts"; // Import account nav items
-import { toast } from "sonner"; // Import toast
+import { accountNavItems } from "@/data/accountNavItems.ts";
+// import { toast } from "sonner"; 
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -37,7 +35,7 @@ const categories = [
   { name: "Others", icon: Gem, link: "/products?category=Others" },
 ];
 
-const MobileMenu = ({ isOpen, onClose, favoriteCount, itemCount }: MobileMenuProps) => {
+const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const navigate = useNavigate();
   const { totalItems } = useCart();
   const { totalFavorites } = useFavorites();
@@ -47,12 +45,12 @@ const MobileMenu = ({ isOpen, onClose, favoriteCount, itemCount }: MobileMenuPro
     navigate(path);
   };
 
-  const handleLogout = () => {
-    // Handle logout logic here (e.g., clear user session, tokens)
-    onClose();
-    navigate("/"); // Redirect to home after logout
-    toast.info("You have been logged out.");
-  };
+  // const handleLogout = () => {
+  //   // Handle logout logic here (e.g., clear user session, tokens)
+  //   onClose();
+  //   navigate("/"); // Redirect to home after logout
+  //   toast.info("You have been logged out.");
+  // };
 
   const menuVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -77,7 +75,7 @@ const MobileMenu = ({ isOpen, onClose, favoriteCount, itemCount }: MobileMenuPro
           </Button>
 
           {/* 2. My Account Accordion */}
-          <div>
+          {/* <div>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="account" className="border-b-0">
                 <AccordionTrigger className="flex items-center justify-between px-4 py-1 text-base font-semibold text-foreground hover:no-underline">
@@ -101,7 +99,7 @@ const MobileMenu = ({ isOpen, onClose, favoriteCount, itemCount }: MobileMenuPro
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-          </div>
+          </div> */}
 
           {/* 3. Categories Accordion */}
           <div>
@@ -159,18 +157,18 @@ const MobileMenu = ({ isOpen, onClose, favoriteCount, itemCount }: MobileMenuPro
           </Button>
 
           {/* Temporary Admin Link */}
-          <Button variant="ghost" className="justify-start text-base py-1 text-foreground hover:bg-primary/70" onClick={() => handleLinkClick("/admin")}>
+          {/* <Button variant="ghost" className="justify-start text-base py-1 text-foreground hover:bg-primary/70" onClick={() => handleLinkClick("/admin")}>
             <LayoutDashboard className="mr-2 h-5 w-5" /> Admin Dashboard
-          </Button>
+          </Button> */}
 
           {/* 9. Logout (top-level) */}
-          <Button
+          {/* <Button
             variant="ghost"
             className="justify-start text-base py-1 text-foreground hover:text-destructive hover:bg-destructive/70"
             onClick={handleLogout}
           >
             <LogOut className="mr-2 h-5 w-5" /> Logout
-          </Button>
+          </Button> */}
         </motion.nav>
       </SheetContent>
     </Sheet>

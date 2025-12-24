@@ -4,12 +4,11 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Banknote, Loader2, Upload } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
 // Zod schema for bank transfer information
@@ -35,15 +34,12 @@ const BankTransferPaymentForm = ({ onNext, onPrevious, initialData }: BankTransf
     handleSubmit,
     formState: { isSubmitting },
     setValue,
-    watch,
   } = useForm<BankTransferFormData>({
     resolver: zodResolver(bankTransferSchema),
     defaultValues: {
       receiptFile: initialData?.receiptFile,
     },
   });
-
-  const currentReceiptFile = watch("receiptFile");
 
   const handleReceiptUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -82,9 +78,9 @@ const BankTransferPaymentForm = ({ onNext, onPrevious, initialData }: BankTransf
           <div className="bg-muted/30 rounded-lg p-6 border border-border">
             <p className="font-semibold text-lg text-foreground">Please make your payment to:</p>
             <ul className="mt-3 space-y-1 text-muted-foreground text-sm">
-              <li><strong>Bank Name:</strong> Opay</li>
-              <li><strong>Account Name:</strong> Hashim Aishat Omowunmi</li>
-              <li><strong>Account Number:</strong> 9039144261</li>
+              <li><strong>Bank Name:</strong>To be updated</li>
+              <li><strong>Account Name:</strong>To be updated</li>
+              <li><strong>Account Number:</strong>To be updated</li>
             </ul>
 
             <p className="mt-4 text-xs text-muted-foreground">

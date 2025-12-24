@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { motion, AnimatePresence, Easing } from "framer-motion";
-import { getProductById, ProductDetails as ProductDetailsType, getRandomProducts, getRecentlyViewedProducts } from "@/data/products.ts";
+import { motion, Easing } from "framer-motion";
+import { getProductById, ProductDetails as ProductDetailsType, getRecentlyViewedProducts } from "@/data/products.ts";
 import ProductBreadcrumb from "@/components/product-details/ProductBreadcrumb.tsx";
 import ProductImageGallery from "@/components/product-details/ProductImageGallery.tsx";
 import ProductInfoSection from "@/components/product-details/ProductInfoSection.tsx";
@@ -40,7 +40,7 @@ const ProductDetails = () => {
         if (fetchedProduct) {
           setProduct(fetchedProduct);
 
-          setRecentlyViewedProductIds((prevIds) => {
+          setRecentlyViewedProductIds(() => {
             const currentViewed = JSON.parse(localStorage.getItem(RECENTLY_VIEWED_KEY) || "[]") as string[];
             const updatedViewed = [productId, ...currentViewed.filter(id => id !== productId)].slice(0, MAX_RECENTLY_VIEWED);
             localStorage.setItem(RECENTLY_VIEWED_KEY, JSON.stringify(updatedViewed));

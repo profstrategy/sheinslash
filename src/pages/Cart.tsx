@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useCart } from "@/context/CartContext.tsx";
@@ -64,8 +64,7 @@ const Cart = () => {
                     <img src={item.images[0]} alt={item.name} className="h-20 w-20 object-contain rounded-md border" />
                     <div>
                       <h2 className="font-semibold text-xl">{item.name}</h2>
-                      <p className="text-muted-foreground">₦{item.unitPrice.toLocaleString('en-NG', { minimumFractionDigits: 2 })} / pc</p> {/* Display unit price */}
-                      <p className="text-sm text-muted-foreground">MOQ: {item.minOrderQuantity} pcs</p> {/* Display MOQ */}
+                      <p className="text-muted-foreground">₦{item.unitPrice.toLocaleString('en-NG', { minimumFractionDigits: 2 })}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4 w-full sm:w-auto justify-between">
@@ -74,22 +73,36 @@ const Cart = () => {
                         variant="outline"
                         size="icon"
                         className="h-8 w-8"
-                        onClick={() => updateQuantity(item.id, item.quantity - item.minOrderQuantity)}
-                        disabled={item.quantity <= item.minOrderQuantity}
+                        onClick={() => {
+                          if (item.quantity <= 1) {
+                            removeFromCart(item.id);
+                          } else {
+                            updateQuantity(item.id, item.quantity - 1);
+                          }
+                        }}
                       >
-                        <Minus className="h-4 w-4" />
+                        {item.quantity <= 1 ? (
+                          <Trash2 className="h-4 w-4" />
+                        ) : (
+                          <Minus className="h-4 w-4" />
+                        )}
                       </Button>
-                      <span className="w-8 text-center text-lg font-medium">{item.quantity}</span>
+
+                      <span className="w-8 text-center text-lg font-medium">
+                        {item.quantity}
+                      </span>
+
                       <Button
                         variant="outline"
                         size="icon"
                         className="h-8 w-8"
-                        onClick={() => updateQuantity(item.id, item.quantity + item.minOrderQuantity)}
+                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
                       >
                         <Plus className="h-4 w-4" />
                       </Button>
                     </div>
-                    <p className="font-bold text-2xl">₦{(item.quantity * item.unitPrice).toLocaleString('en-NG', { minimumFractionDigits: 2 })}</p> {/* Use unitPrice */}
+
+                    <p className="font-bold text-2xl">₦{(item.quantity * item.unitPrice).toLocaleString('en-NG', { minimumFractionDigits: 2 })}</p>
                     <Button
                       variant="ghost"
                       size="icon"
@@ -108,13 +121,21 @@ const Cart = () => {
           </div>
           <div className="md:col-span-1 bg-card border rounded-lg p-6 shadow-lg h-fit">
             <h2 className="text-2xl font-bold mb-4">Order Summary</h2>
-            <div className="flex justify-between text-lg mb-2">
-              <span>Subtotal:</span>
-              <span>₦{totalPrice.toLocaleString('en-NG', { minimumFractionDigits: 2 })}</span>
+            <div className="space-y-2 mb-4">
+              {cartItems.map((item) => (
+                <div key={item.id} className="flex justify-between text-sm">
+                  <span className="text-muted-foreground">
+                    {item.name} × {item.quantity}
+                  </span>
+                  <span>₦{(item.quantity * item.unitPrice).toLocaleString('en-NG', { minimumFractionDigits: 2 })}</span>
+                </div>
+              ))}
             </div>
-            <div className="flex justify-between text-lg font-bold mb-6">
-              <span>Total:</span>
-              <span>₦{totalPrice.toLocaleString('en-NG', { minimumFractionDigits: 2 })}</span>
+            <div className="border-t pt-4">
+              <div className="flex justify-between text-lg font-bold mb-6">
+                <span>Total:</span>
+                <span>₦{totalPrice.toLocaleString('en-NG', { minimumFractionDigits: 2 })}</span>
+              </div>
             </div>
             <Button asChild className="w-full text-lg" disabled={cartItems.length === 0 || isCheckingOut}>
               <Link to="/checkout">
