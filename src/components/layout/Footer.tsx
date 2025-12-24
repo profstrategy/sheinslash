@@ -15,7 +15,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { FaTiktok, FaWhatsapp, FaTwitter } from "react-icons/fa"; // Import FaWhatsapp
-import UniqueEmporiumLogo from "@/components/logo/UniqueEmporiumLogo.tsx";
+import UniqueEmporiumLogo from "@/components/logo/Taltex-logo";
 
 const staggerContainer = {
   hidden: { opacity: 0 },

@@ -7,7 +7,7 @@ import Badge from "@/components/common/Badge.tsx";
 import { motion, Easing } from "framer-motion";
 import { useCart } from "@/context/CartContext.tsx";
 import { useFavorites } from "@/context/FavoritesContext.tsx";
-import UniqueEmporiumLogo from "@/components/logo/UniqueEmporiumLogo.tsx";
+import UniqueEmporiumLogo from "@/components/logo/Taltex-logo";
 import {
   Accordion,
   AccordionContent,

@@ -3,7 +3,7 @@
 import React, { useState, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import { Skeleton } from "@/components/ui/skeleton";
-import UniqueEmporiumLogo from "@/components/logo/UniqueEmporiumLogo.tsx";
+import UniqueEmporiumLogo from "@/components/logo/Taltex-logo";
 
 interface ImageWithFallbackProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string | undefined;

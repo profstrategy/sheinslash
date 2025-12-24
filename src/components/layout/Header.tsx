@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Menu, X, Search, Heart, ChevronDown, Gem, User, Drumstick, Package, Flame, Users} from "lucide-react";
+import { Menu, X, Search, Heart, ChevronDown, Gem, Drumstick, Package, Flame, Users} from "lucide-react";
 import Badge from "@/components/common/Badge.tsx";
 import CartIcon from "@/components/common/CartIcon.tsx";
 import SlideOutSearchBar from "./SlideOutSearchBar.tsx";
@@ -12,7 +12,7 @@ import CartDrawer from "./CartDrawer.tsx";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useCart } from "@/context/CartContext.tsx";
 import { useFavorites } from "@/context/FavoritesContext.tsx";
-import UniqueEmporiumLogo from "@/components/logo/UniqueEmporiumLogo.tsx";
+import UniqueEmporiumLogo from "@/components/logo/Taltex-logo.tsx";
 
 interface HeaderProps {
   isCartDrawerOpen: boolean;
@@ -44,9 +44,9 @@ const Header = ({ isCartDrawerOpen, setIsCartDrawerOpen }: HeaderProps) => {
     }
   };
 
-  const handleCategoryClick = (link: string) => {
-    navigate(link);
-  };
+  // const handleCategoryClick = (link: string) => {
+  //   navigate(link);
+  // };
 
   return (
     <>
@@ -138,13 +138,13 @@ const Header = ({ isCartDrawerOpen, setIsCartDrawerOpen }: HeaderProps) => {
             <CartIcon onOpenCartDrawer={() => setIsCartDrawerOpen(true)} />
 
             {/* Account Dashboard Link (Hidden on mobile/tablet, visible on large screens) */}
-            {!isMobile && ( // isMobile is now true for screens < 1024px
+            {/* {!isMobile && ( // isMobile is now true for screens < 1024px
               <Link to="/account" className="relative">
                 <Button variant="ghost" size="icon">
                   <User className="h-5 w-5" />
                 </Button>
               </Link>
-            )}
+            )} */}
 
             {/* Mobile Menu Button (visible on mobile/tablet, hidden on large screens) */}
             <Button

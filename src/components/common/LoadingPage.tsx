@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import UniqueEmporiumLogo from "@/components/logo/UniqueEmporiumLogo.tsx"; // Import the brand logo
+import UniqueEmporiumLogo from "@/components/logo/Taltex-logo"; // Import the brand logo
 
 const LoadingPage = () => {
   return (

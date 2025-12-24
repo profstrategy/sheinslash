@@ -1,6 +1,5 @@
 "use client";
-
-import React, { useState, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { motion, AnimatePresence, Easing } from "framer-motion";
 import { X, User, Package } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa"; // Import FaWhatsapp
@@ -81,7 +80,7 @@ const FloatingWhatsApp = () => {
               className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground"
             >
               <a
-                href="https://wa.me/message/CHT2INJ4SKUMH1"
+                // href="https://wa.me/message/CHT2INJ4SKUMH1"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => isMobile && setIsOpen(false)}
@@ -94,7 +93,7 @@ const FloatingWhatsApp = () => {
               className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground"
             >
               <a
-                href="https://wa.me/2349065545572"
+                // href="https://wa.me/2349065545572"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => isMobile && setIsOpen(false)}

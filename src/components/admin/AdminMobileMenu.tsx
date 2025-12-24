@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { X, LogOut, ChevronRight } from "lucide-react";
 import { motion, Easing } from "framer-motion";
 import { cn } from "@/lib/utils";
-import UniqueEmporiumLogo from "@/components/logo/UniqueEmporiumLogo.tsx";
+import UniqueEmporiumLogo from "@/components/logo/Taltex-logo";
 import { adminNavItems, linkVariants } from "@/data/adminNavItems.ts";
 import { toast } from "sonner";
 

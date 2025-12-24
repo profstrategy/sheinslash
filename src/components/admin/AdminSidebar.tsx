@@ -7,7 +7,7 @@ import { motion, Easing } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { adminNavItems, linkVariants } from "@/data/adminNavItems.ts";
-import UniqueEmporiumLogo from "@/components/logo/UniqueEmporiumLogo.tsx";
+import UniqueEmporiumLogo from "@/components/logo/Taltex-logo";
 
 const AdminSidebar = () => {
   const renderNavLinks = () => (
