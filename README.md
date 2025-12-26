@@ -1,5 +1,5 @@
-# sheinslash
-An wholesales e-commerce platform where all kinds of shein gowns are sold in bulk for retailers
+# taltexmeathub
+An e-commerce platform where all kinds of rabbit meats are sold in bulk for retailers and consumers
 
 ## Features
 - Authentication and user management
